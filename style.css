@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main_box {
+  background-image: url(photo.jpg);
+  height: 100vh;
+  background-size: cover;
+}
+
+.btn_one i {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  left: 16px;
+  line-height: 60px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.sidebar_menu {
+  position: fixed;
+  left: -350px; /*it align to the left part of the screen hence not visible */
+  height: 100vh;
+  width: 300px;
+  background-color: rgb(255, 255, 255, 0.1);
+  box-shadow: 0px 0px 6px rgb(255, 255, 255, 0.5);
+  transition: all 0.3s linear; /*transition applied when we select the icon*/
+}
+
+/* box-shadow 2px to show the shadow in y-offset */
+.sidebar_menu .logo {
+  position: absolute;
+  width: 100%;
+  line-height: 60px;
+  height: 60px;
+  box-shadow: 0px 2px 4px rgb(255, 255, 255, 0.5);
+}
+
+.sidebar_menu .logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 400;
+  position: absolute;
+  left: 80px;
+}
+
+.sidebar_menu .btn_two i {
+  color: grey;
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  left: 275px;
+  line-height: 60px;
+  opacity: 0; /*this will disappear the btn_two*/
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.sidebar_menu .menu {
+  width: 100%;
+  position: absolute;
+  top: 80px;
+}
+
+.sidebar_menu .menu li {
+  margin-top: 6px;
+  padding: 10px 20px;
+}
+
+.sidebar_menu .menu i,
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.sidebar_menu .menu i {
+  padding-right: 8px;
+}
+
+.sidebar_menu .social_media {
+  position: absolute;
+  left: 25%;
+  bottom: 50px;
+}
+
+.sidebar_menu .social_media i {
+  color: white;
+  opacity: 0.5;
+  padding: 0 5px;
+}
+
+#check {
+  display: none;
+}
+
+.sidebar_menu .menu li:hover {
+  box-shadow: 0px 0px 4px rgb(255, 255, 255, 0.5);
+}
+
+.btn_one i:hover {
+  font-size: 40px;
+}
+
+.btn_two i:hover {
+  font-size: 25px;
+}
+
+.sidebar_menu .social_media i:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* :checked when the checkbox is selected/checked 
+~ --> immediate sibilings  
+if we check the checkbox once it will have position left:0
+if we checl the checkbox tweice it will have position left -350px hence not visible*/
+#check:checked ~ .sidebar_menu {
+  left: 0;
+}
+
+/* to remove the btn_one when checked */
+#check:checked ~ .btn_one {
+  opacity: 0;
+}
+
+/* as we checked the checkbox we should be above to see the btn_two 
+as the btn_two is not the direct sibiling we write .sidebar_menu*/
+#check:checked ~ .sidebar_menu .btn_two i {
+  opacity: 1;
+}
