@@ -1,2 +1,2 @@
-# Photography-
+# Photography
 Sidebar
